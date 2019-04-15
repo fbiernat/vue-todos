@@ -18,10 +18,13 @@
         <div class="container">
             <div class="tasklist">
                 <div class="taskInputWrapper">
-                    <input id="taskInput" v-on:keyup.enter="addTask" type="text" placeholder="What needs to be done?" autofocus>
+                    <input id="taskInput" v-on:keyup.enter="addTask" type="text" placeholder="What needs to be done?"
+                        autofocus>
                 </div>
-                <ul v-if="tasks.length > 0">
-                    <li v-for="task in tasks" class="task" v-bind:class="{marked: task.isDone}"><div v-on:click="markTaskAsDone(task.id)" class="tickBox"></div>{{task.name}}</li>
+                <ul v-if="taskList.length > 0">
+                    <li v-for="task in taskList" class="task" v-bind:class="{marked: task.isDone}">
+                        <div v-on:click="markTaskAsDone(task.id)" class="tickBox"></div>{{task.name}}
+                    </li>
                 </ul>
                 <div v-else class="info">
                     No tasks left.
@@ -32,9 +35,12 @@
                     {{itemsLeft}} items left
                 </div>
                 <div class="flex-center">
-                    <button class="btn btn-active">All</button>
-                    <button class="btn">Active</button>
-                    <button class="btn">Completed</button>
+                    <button class="btn" v-bind:class="{active: isActiveView(0)}"
+                        v-on:click="showAllTasks()">All</button>
+                    <button class="btn" v-bind:class="{active: isActiveView(1)}"
+                        v-on:click="showActiveTasks()">Active</button>
+                    <button class="btn" v-bind:class="{active: isActiveView(2)}"
+                        v-on:click="showCompletedTasks()">Completed</button>
                 </div>
                 <div>
                     <button class="btn" v-on:click="clearCompleted">Clear completed</button>
@@ -50,7 +56,7 @@
     <script src="https://unpkg.com/vue"></script>
     <script src="js/main.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("taskInput").focus();
         });
     </script>
