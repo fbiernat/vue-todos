@@ -63,10 +63,6 @@ input[type="text"] {
     list-style: none;
 }
 
-.task {
-    transition: all 0.8s;
-}
-
 .tickBox {
     position: relative;
     width: 20px;
@@ -118,9 +114,15 @@ button.btn {
     padding: 3px 7px;
     background: transparent;
     color: gray;
+    transition: all 0.25s;
 }
 
-.btn.btn-active {
+.btn:hover {
+    border-color: gray;
+    color: black;
+}
+
+.btn.active {
     border: 1px solid silver;
 }
 
