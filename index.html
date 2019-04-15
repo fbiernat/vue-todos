@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue todos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="title">
+            todos
+        </div>
+        <div class="container">
+            <div class="tasklist">
+                <div class="taskInputWrapper">
+                    <input id="taskInput" v-on:keyup.enter="addTask" type="text" placeholder="What needs to be done?" autofocus>
+                </div>
+                <ul v-if="tasks.length > 0">
+                    <li v-for="task in tasks" class="task" v-bind:class="{marked: task.isDone}"><div v-on:click="markTaskAsDone(task.id)" class="tickBox"></div>{{task.name}}</li>
+                </ul>
+                <div v-else class="info">
+                    No tasks left.
+                </div>
+            </div>
+            <div class="controls">
+                <div>
+                    {{itemsLeft}} items left
+                </div>
+                <div class="flex-center">
+                    <button class="btn btn-active">All</button>
+                    <button class="btn">Active</button>
+                    <button class="btn">Completed</button>
+                </div>
+                <div>
+                    <button class="btn" v-on:click="clearCompleted">Clear completed</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; Filip Biernat 2019
+    </footer>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("taskInput").focus();
+        });
+    </script>
+</body>
+
+</html>

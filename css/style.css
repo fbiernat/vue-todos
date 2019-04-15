@@ -1,0 +1,142 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-color: #f2eeea;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"] {
+    width: 100%; 
+    box-sizing: border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing: border-box;
+}
+
+.title {
+    font-size: 5.8rem;
+    color: #ddcdbc;
+    margin-bottom: 1rem;
+    margin-top: 30px;
+}
+
+.container {
+    background-color: white;
+    max-width: 600px;
+    margin: auto;
+    text-align: left;
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+    box-shadow: 5px 5px 23px rgba(0, 0, 0, 0.15);
+}
+
+.taskInputWrapper{
+    padding: 10px;
+    border-bottom: 3px solid #e8e8e8;
+}
+
+.tasklist ul li {
+    border-bottom: 1px solid #e8e8e8;
+    color: gray;
+    font-size: 1.3rem;
+    padding: 16px 0;
+    display: flex;
+    align-items: center;
+}
+
+#taskInput {
+    width: 100%;
+    font-size: 1.3rem;
+    padding: 5px;
+    border: 0;
+    color: #d8d1c9;
+}
+
+.tasklist ul, .tasklist li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.task {
+    transition: all 0.8s;
+}
+
+.tickBox {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: solid #d8d1c9 1px;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.marked .tickBox::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: url('../img/check.svg');
+
+    background-size: contain;
+    background-position: 2px 4px;
+    background-repeat: no-repeat;
+}
+
+.task.marked {
+    color: #e8e8e8;
+    text-decoration: line-through;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    color: gray;
+    padding: 10px;
+}
+
+.flex-center {
+    flex: 1 0 auto;
+    text-align: center;
+}
+
+button {
+    cursor: pointer;
+}
+
+button.btn {
+    border: 0;
+    border-radius: 3px;
+    padding: 3px 7px;
+    background: transparent;
+    color: gray;
+}
+
+.btn.btn-active {
+    border: 1px solid silver;
+}
+
+.info {
+    text-align: center;
+    font-size: 2.3rem;
+    color: silver;
+    padding: 40px 0;
+}
+
+#app {
+    flex: 1 0 auto;
+}
+
+footer {
+    flex-shrink: 0;
+    color: gray;
+    height: 50px;
+}
