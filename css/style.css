@@ -81,12 +81,12 @@ input[type="text"] {
 .marked .tickBox::after {
     content: '';
     position: absolute;
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     background: url('../img/check.svg');
 
     background-size: contain;
-    background-position: 2px 4px;
+    background-position: 2px 3px;
     background-repeat: no-repeat;
 }
 

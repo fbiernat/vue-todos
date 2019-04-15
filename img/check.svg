@@ -23,17 +23,17 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1366"
-     inkscape:window-height="704"
+     inkscape:window-width="1920"
+     inkscape:window-height="1043"
      id="namedview8"
      showgrid="false"
-     inkscape:zoom="0.84096521"
-     inkscape:cx="323.04618"
-     inkscape:cy="-39.782747"
-     inkscape:window-x="0"
-     inkscape:window-y="27"
+     inkscape:zoom="2.3786088"
+     inkscape:cx="147.81284"
+     inkscape:cy="95.674585"
+     inkscape:window-x="1366"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg8" />
+     inkscape:current-layer="layer1" />
   <defs
      id="defs2" />
   <metadata
@@ -53,14 +53,9 @@
      transform="translate(-61.801321,-105.4139)">
     <path
        id="path3988"
-       d="m 61.988093,130.12351 25.702382,26.64732 44.883995,-45.6858 -6.38645,-5.49016 L 88.036025,144.39211 68.41369,123.8869 Z"
-       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       inkscape:connector-curvature="0" />
-    <path
-       transform="scale(0.26458333)"
-       id="path3990"
-       d="m 284.13743,542.34955 c -25.78842,-26.75087 -47.28556,-49.09921 -47.77142,-49.66296 -0.86456,-1.00316 -0.63734,-1.26314 10.65844,-12.19554 l 11.54183,-11.17054 36.98497,38.63891 c 20.34174,21.2514 37.15218,38.56914 37.35654,38.48387 0.20437,-0.0853 32.71116,-33.04522 72.23731,-73.24434 l 71.86574,-73.08931 11.18657,9.65056 c 6.15261,5.3078 11.256,9.82528 11.34086,10.03883 0.17935,0.45135 -167.47363,171.18848 -168.09617,171.18848 -0.22915,0 -21.51624,-21.88708 -47.30467,-48.63796 z"
-       style="stroke-width:0.50507629"
-       inkscape:connector-curvature="0" />
+       d="m 68.884631,138.24363 19.473251,17.52609 26.752778,-40.79148 -4.273,-2.48683 -23.357807,35.1265 -14.839253,-13.7199 z"
+       style="fill:#55d400;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc" />
   </g>
 </svg>
