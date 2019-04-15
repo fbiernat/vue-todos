@@ -2,21 +2,22 @@ new Vue({
     el: '#app',
     data: {
         tasks: [
-            {id: 0, name: 'Test task', isDone: false},
-            {id: 1, name: 'Test done task', isDone: true},
-            {id: 2, name: 'Another task to do', isDone: false},
-            {id: 3, name: 'New task', isDone: false}
+            { id: 0, name: 'Test task', isDone: false },
+            { id: 1, name: 'Test done task', isDone: true },
+            { id: 2, name: 'Another task to do', isDone: false },
+            { id: 3, name: 'New task', isDone: false }
         ],
+        taskList: [],
+        activeView: 0,
         taskCount: 4,
         itemsLeft: 3,
         nextId: 4
     },
     methods: {
         addTask(event) {
-            console.log(event);
             var taskName = event.target.value;
             if (taskName !== '') {
-                var task = {id: this.nextId, name: taskName, isDone: false};
+                var task = { id: this.nextId, name: taskName, isDone: false };
                 this.tasks.unshift(task);
                 this.itemsLeft++;
                 this.nextId++;
@@ -30,8 +31,6 @@ new Vue({
                     taskIdx = i;
                 }
             }
-
-            // this.tasks[taskIdx].isDone = this.tasks[taskIdx].isDone ? false : true;
             if (this.tasks[taskIdx].isDone === true) {
                 this.tasks[taskIdx].isDone = false;
                 this.itemsLeft++;
@@ -39,7 +38,6 @@ new Vue({
                 this.tasks[taskIdx].isDone = true;
                 this.itemsLeft--;
             }
-            // console.log(taskIdx);
         },
         clearCompleted() {
             var clearedTasks = [];
@@ -50,8 +48,38 @@ new Vue({
                     continue;
                 }
             }
-
             this.tasks = clearedTasks;
+            if (this.activeView == 0) {
+                this.showAllTasks();
+            } else if (this.activeView == 1) {
+                this.showActiveTasks();
+            } else if (this.activeView == 2) {
+                this.showCompletedTasks();
+            }
+        },
+        showAllTasks() {
+            this.activeView = 0;
+            this.taskList = this.tasks;
+        },
+        showActiveTasks() {
+            this.activeView = 1;
+            this.taskList = this.tasks.filter(function(el) {
+                return !el.isDone;
+            });
+        },
+        showCompletedTasks() {
+            this.activeView = 2;
+            this.taskList = this.tasks.filter(function(el) {
+                return el.isDone;
+            });
+        },
+        isActiveView(btnId) {
+            return (btnId == this.activeView);
         }
+    },
+    beforeMount() {
+        this.taskCount = this.tasks.length;
+        this.nextId = this.tasks.length;
+        this.showAllTasks();
     }
 });
