@@ -12,6 +12,10 @@
 
 <body>
     <div id="app">
+        <div class="topbar">
+            <button class="btn pullright">Sign in</button>
+            <button class="btn">Login</button>
+        </div>
         <div class="title">
             todos
         </div>
@@ -21,18 +25,21 @@
                     <input id="taskInput" v-on:keyup.enter="addTask" type="text" placeholder="What needs to be done?"
                         autofocus>
                 </div>
-                <ul v-if="taskList.length > 0">
+                <ul v-if="tasks.length > 0" v-cloak>
                     <li v-for="task in taskList" class="task" v-bind:class="{marked: task.isDone}">
                         <div v-on:click="markTaskAsDone(task.id)" class="tickBox"></div>{{task.name}}
                     </li>
                 </ul>
                 <div v-else class="info">
-                    No tasks left.
+                    No tasks here.
                 </div>
             </div>
             <div class="controls">
                 <div>
-                    {{itemsLeft}} items left
+                    {{itemsLeft}}
+                    <span v-if="itemsLeft == 1">item</span>
+                    <span v-else>items</span>
+                    left
                 </div>
                 <div class="flex-center">
                     <button class="btn" v-bind:class="{active: isActiveView(0)}"
