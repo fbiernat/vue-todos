@@ -103,7 +103,7 @@ input[type="text"] {
 }
 
 .task.marked {
-    color: #e8e8e8;
+    color: #bababa;
     text-decoration: line-through;
 }
 
