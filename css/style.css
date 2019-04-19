@@ -23,12 +23,23 @@ input[type="text"] {
 }
 
 .topbar {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     margin: auto;
-    width: 100%;
+    width: auto;
     text-align: right;
+    padding: 20px;
+    
+}
+
+.topbar .btn {
+    transition: all 0;
+    border: 1px solid transparent;
+}
+
+.topbar .btn:hover {
+    border: 1px solid silver;
 }
 
 .pullright {
