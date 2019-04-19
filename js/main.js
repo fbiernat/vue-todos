@@ -9,9 +9,16 @@ new Vue({
         ],
         taskList: [],
         activeView: 0,
-        taskCount: 4,
-        itemsLeft: 3,
-        nextId: 4
+        taskCount: 0,
+        itemsLeft: 0,
+        nextId: 0
+    },
+    created() {
+        this.taskCount = this.tasks.length;
+        this.nextId = this.taskCount;
+        this.itemsLeft = this.tasks.reduce(function (acc, val) {
+            return acc + (val.isDone ? 0 : 1);
+        }, 0);
     },
     methods: {
         addTask(event) {
@@ -63,13 +70,13 @@ new Vue({
         },
         showActiveTasks() {
             this.activeView = 1;
-            this.taskList = this.tasks.filter(function(el) {
+            this.taskList = this.tasks.filter(function (el) {
                 return !el.isDone;
             });
         },
         showCompletedTasks() {
             this.activeView = 2;
-            this.taskList = this.tasks.filter(function(el) {
+            this.taskList = this.tasks.filter(function (el) {
                 return el.isDone;
             });
         },
