@@ -100,6 +100,7 @@ input[type="text"] {
     align-self: center;
     margin: 0 8px 0 2px;
     color: rgba(0,0,0,0.35);
+    color: #d8d1c9;
 }
 
 .tasklist ul li {
@@ -117,6 +118,10 @@ input[type="text"] {
     font-size: 1.3rem;
     padding: 5px;
     border: 0;
+    color: gray;
+}
+
+#taskInput::placeholder {
     color: #d8d1c9;
 }
 
